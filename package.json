@@ -1,6 +1,6 @@
 {
     "name": "safe-webpack-define-plugin",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "A webpack (typescript ready) plugin to define global variables on outputted bundles",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -14,7 +14,10 @@
     },
     "keywords": [
         "webpack",
-        "plugin"
+        "plugin",
+        "typescript",
+        "variables",
+        "safe"
     ],
     "repository": {
         "type": "git",

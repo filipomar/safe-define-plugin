@@ -10,14 +10,14 @@ export enum ExposureStrategy {
     /**
      * Objects can be referenced by their name
      *
-     * @example `{ hello: 'there' }` can be referenced bt `hello`
+     * @example `{ hello: 'there' }` can be referenced by `hello`
      */
     NONE = 'NONE',
 
     /**
      * Objects can be referenced by accessing the window object
      *
-     * @example `{ hello: 'there' }` can be referenced bt `window.hello`
+     * @example `{ hello: 'there' }` can be referenced by `window.hello`
      */
     WINDOW = 'WINDOW',
 }
@@ -31,4 +31,14 @@ export type SafeDefinePluginOptions = {
      * See `ExposureStrategy` for default options
      */
     readonly exposureStrategy?: ExposureStrategy | string[] | ExposureFunction;
+
+    /**
+     * It is also possible to expose the root definition itself
+     *
+     * So instead of having to reference the children of the property
+     * One can reference the exposure itself of the built code
+     *
+     * Use this with **caution** as the outputted bundle might get big
+     */
+    readonly rootExposureStrategy?: string[];
 };

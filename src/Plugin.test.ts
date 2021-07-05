@@ -86,6 +86,25 @@ describe(SafeDefinePlugin.name, () => {
         expect(plugin.definitions).toStrictEqual({ hello: JSON.stringify('there'), bold: JSON.stringify('one') });
     });
 
+    it('exposes only root definition if top exposures are not also set', () => {
+        const plugin = new SafeDefinePlugin({ hello: 'there', bold: 'one' }, { rootExposureStrategy: ['iAm(G)root'] });
+
+        expect(plugin.definitions).toStrictEqual({ 'iAm(G)root': JSON.stringify({ hello: 'there', bold: 'one' }) });
+    });
+
+    it('exposes only root definition if top exposures are not also set', () => {
+        const plugin = new SafeDefinePlugin(
+            { hello: 'there', bold: 'one' },
+            { exposureStrategy: ExposureStrategy.WINDOW, rootExposureStrategy: ['iAm(G)root'] }
+        );
+
+        expect(plugin.definitions).toStrictEqual({
+            ['window.hello']: JSON.stringify('there'),
+            ['window.bold']: JSON.stringify('one'),
+            'iAm(G)root': JSON.stringify({ hello: 'there', bold: 'one' }),
+        });
+    });
+
     it('bundles complex objects only when they are listed', async () => {
         const OUTPUT_PATH = './test/build/entrypoint.js';
 
