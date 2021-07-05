@@ -14,7 +14,10 @@
     },
     "keywords": [
         "webpack",
-        "plugin"
+        "plugin",
+        "typescript",
+        "variables",
+        "safe"
     ],
     "repository": {
         "type": "git",

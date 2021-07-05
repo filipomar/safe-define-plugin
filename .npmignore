@@ -1,11 +1,11 @@
 .eslintrc.json
+.gitignore
 .nvmrc
 .prettierignore
 .prettierrc.json
 .vscode
 buildtsconfig.json
 coverage
-dist
 jest.config.ts   
 src
 test
