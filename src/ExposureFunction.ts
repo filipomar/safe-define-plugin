@@ -9,7 +9,10 @@ const buildExposureFunction = (strategy = ExposureStrategy.NONE): ExposureFuncti
     }
 };
 
-const buildArrayExposureFunction = (paths: string[]): ExposureFunction => (name) => [...paths, name].join('.');
+const buildArrayExposureFunction =
+    (paths: string[]): ExposureFunction =>
+        (name) =>
+            [...paths, name].join('.');
 
 export const resolveExposureFunction = (exposureStrategy: SafeDefinePluginOptions['exposureStrategy']): ExposureFunction => {
     if (exposureStrategy instanceof Function) {
