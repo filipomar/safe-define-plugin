@@ -17,5 +17,5 @@
         "semi": ["error", "always"],
         "max-len": ["error", 160]
     },
-    "ignorePatterns": ["dist", "coverage"]
+    "ignorePatterns": ["dist", "coverage", "test/build"]
 }
